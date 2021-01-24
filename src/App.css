@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container.nav-container {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.photo-container {
+  padding: 50px;
+}
+
+.loading-container {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.body {
+   position: relative;
+   height: 100vh;
+   min-height: 500px;
+   width: 100%;
+   background: #161415 url(./images/homepage-background.jpg) no-repeat center center;
+   background-size: cover !important;
+	-webkit-background-size: cover !important;
+   text-align: center;
+   overflow: hidden;
+   color: white;
+}
+
+.body.photography {
+  overflow: visible !important;
+  min-height: 1500px;
+}
+
+.homepage-content {
+
+   display: inline-block;
+   vertical-align: middle;
+   margin: 0 auto;
+   width: 85%;
+   padding-top: 150px;
+   padding-bottom: 30px;
+   text-align: center;
+}
+
+.introduction {
+  font-size: 80px;
+}
+
+.intro-description {
+  font-size: 30px;
+}
+
+.navbar-brand.selected {
+  color:  #61819d;
+  /* #5e809c #456b8f #4a6e90 #426582 */
+}
+
+.navbar-brand.selected:hover {
+  color:  #61819d;
+}
+.navbar-brand {
+  padding: 10px;
+}
+
+@keyframes reveal {
+    from {
+      transform: scale(0.001);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+@keyframes slide {
+    to {
+      transform: translateX(1em);
+    }
+}
+
+.ball {
+  display: block;
+  width: 1em;
+  height: 1em;
+  borderRadius: 0.5em;
+  background: #555;
+  position: absolute;
+  animationDuration: 0.5s;
+  animationTimingFunction: ease;
+  animationIterationCount: infinite;
+}
+
+.ball:nth-child(1) {
+  left: 0;
+  animationName: reveal;
+}
+
+.ball:nth-child(2) {
+  left: 0;
+  animationName: reveal;
+}
+
+.ball:nth-child(3) {
+  left: 0.5em;
+  animationName: slide;
+}
+
+.ball:nth-child(4) {
+  left: 2em;
+  animationName: reveal;
+  animationDirection: reverse;
+}
+
+loading: {
+  fontSize: 20;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

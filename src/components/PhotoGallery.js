@@ -40,7 +40,10 @@ function PhotoGallery(props) {
         {photos.map(photo => {
           return (
             <div className='photo-container' key={photo.id}>
-              <Image cloudName="dvtljlyii" publicId={`photography-portfolio/${photo}`} width="500" crop="scale"/>
+              <Image cloudName="dvtljlyii"
+              publicId={`photography-portfolio/${photo}`} 
+              width="500"
+              crop="scale"/>
             </div>
           );
         })}

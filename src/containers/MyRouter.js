@@ -7,6 +7,7 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import Projects from '../components/Projects';
 import HomePage from '../components/HomePage';
 import About from '../components/About';
+import Resume from '../components/Resume';
 import Photography from '../components/Photography';
 import PortfolioData from '../state/reducers/PortfolioData';
 import thunk from 'redux-thunk';
@@ -33,6 +34,7 @@ function MyRouter() {
       <BrowserRouter>
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={About} />
+        <Route path="/resume" component={Resume} />
         <Route path="/projects" component={Projects} />
         <Route path="/photography" component={Photography} />
       </BrowserRouter>

@@ -19,7 +19,7 @@ function Navbar(props) {
         {
           links.map(link => {
             const url = link === 'home' ? '/': '/' + link;
-            var lower = link;
+            let lower = link;
             return (
               <div className="navbar-item col-2 justify-content-center">
                 <Link className={`navbar-brand navbar-item justify-content-center

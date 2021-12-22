@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, Component } from 'react';
+import React, { useState, useEffect, Fragment, Component } from 'react';
 import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 import { useLoading, Audio } from '@agney/react-loading';
 import _ from 'lodash';
@@ -41,7 +41,7 @@ function PhotoGallery(props) {
           return (
             <div className='photo-container' key={photo.id}>
               <Image cloudName="dvtljlyii"
-              publicId={`photography-portfolio/${photo}`} 
+              publicId={`photography-portfolio/${photo}`}
               width="500"
               crop="scale"/>
             </div>
@@ -53,7 +53,7 @@ function PhotoGallery(props) {
             <LoadingIndicator />
           </div>
         }
-      </div>
+    </div>
     );
   }
 

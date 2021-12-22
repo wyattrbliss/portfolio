@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import HomePage from './components/HomePage';
 import MyRouter from './containers/MyRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';

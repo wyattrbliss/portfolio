@@ -42,17 +42,39 @@
    height: 100vh;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(./images/homepage-background.jpg) no-repeat center center;
+   background: rgb(15, 15, 15);
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
-   overflow: hidden;
    color: white;
+}
+
+.body.homepage {
+  background: #161415 url(./images/homepage-background.jpg) no-repeat center center;
 }
 
 .body.photography {
   overflow: visible !important;
   min-height: 1500px;
+}
+
+.body.resume {
+  overflow: hidden;
+}
+
+.project-col {
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.project-image {
+  max-width: 1000px;
+}
+
+.project-item {
+  padding-bottom: 50px;
 }
 
 .homepage-content {
@@ -86,6 +108,36 @@
   padding: 10px;
 }
 
+.thumbnail-container {
+     display: inline-block;
+     vertical-align: left;
+     margin: 0 auto;
+     width: 85%;
+     padding-top: 150px;
+     padding-bottom: 30px;
+     text-align: center;
+  }
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  align-items: center;
+}
+
+.about-body {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-paragraph {
+  font-size: larger;
+  text-align: left;
+}
+  
+
 @keyframes reveal {
     from {
       transform: scale(0.001);
@@ -99,6 +151,8 @@
       transform: translateX(1em);
     }
 }
+
+/* for the loading ball animation */
 
 .ball {
   display: block;

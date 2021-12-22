@@ -7,7 +7,7 @@ function Resume(props) {
       <Navbar />
         <iframe frameborder="0" scrolling="no"
           width="100%" height="100%"
-          src="https://drive.google.com/file/d/1KaRAVrtOUCt4dWT33J44hZ8R1b34Q4hh/preview">
+          src="https://drive.google.com/file/d/1cf8Y6RNEu_VpIPKxUf85W-NTBwvlqooj/preview">
         </iframe>
     </div>
   )

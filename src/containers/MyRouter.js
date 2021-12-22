@@ -17,14 +17,14 @@ const rootReducer = combineReducers({
 })
 
 function configureStore(initialState){
- return createStore(
- rootReducer,
- initialState,
- compose(
-   applyMiddleware(thunk),
-   window.devToolsExtension ? window.devToolsExtension() : f => f
- )
-);
+  return createStore(
+    rootReducer,
+    initialState,
+    compose(
+      applyMiddleware(thunk),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+  );
 }
 const store = configureStore({selected: 'home'})
 

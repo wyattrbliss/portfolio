@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from './Navbar';
 
-function HomePage(props) {
+function HomePage() {
 
   return (
     <div className="body homepage">

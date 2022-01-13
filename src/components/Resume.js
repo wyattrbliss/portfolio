@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from './Navbar';
 
-function Resume(props) {
+function Resume() {
   return (
     <div className="body resume">
       <Navbar />

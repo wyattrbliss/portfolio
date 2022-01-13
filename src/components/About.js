@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from './Navbar';
 import Headshot from '../images/headshot.JPG';
 
-function About(props) {
+function About() {
   return (
     <div className="body">
       <Navbar />

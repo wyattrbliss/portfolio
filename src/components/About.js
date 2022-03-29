@@ -19,8 +19,8 @@ function About() {
               I graduated from Saint Paul Academy and Summit School in 2017, and
               later that year I spent my first semester of college abroad in Berlin, Germany
               as a part of Northeastern University's NUin program.
-              I'm currently pursuing a Bachelor's degree in Computer Science.
-              I am most proficient in Python, but have also worked with TypeScript/JavaScript using the React framework.
+              I received a Bachelor's degree in Computer Science from Northeastern in Dec. 2021.
+              I love working in Python and TypeScript/JavaScript webpages using the React framework.
               In my spare time, you can find me driving my car through the winding backroads
               of Jamaica Plain, or playing with my friends online in the newest Steam games.
             </p>

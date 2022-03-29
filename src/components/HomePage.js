@@ -8,9 +8,9 @@ function HomePage() {
       <Navbar />
       <div className="container homepage-content">
         <h1 className="introduction">Hi, I'm Wyatt Bliss</h1>
-        <p className="intro-description"> I'm a Computer Science student at Northeastern University. I enjoy
-          frontend programming, watching sports such as basketball or hockey, working on my car and
-          playing video games.
+        <p className="intro-description"> I'm a recent graduate and web developer. I enjoy
+          frontend programming, watching or playing sports such as basketball, and
+          playing video games with my friends.
         </p>
       </div>
     </div>

@@ -1,142 +1,42 @@
-
-
-.name-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.container.nav-container {
-  display: inline-flex;
-  justify-content: center;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.photo-container {
-  padding: 50px;
-}
-
-.loading-container {
-  display: inline-flex;
-  justify-content: center;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.body {
-   position: relative;
-   height: 100%;
-   min-height: 500px;
-   width: 100%;
-   background: rgb(15, 15, 15);
-   background-size: cover !important;
-	-webkit-background-size: cover !important;
-   text-align: center;
-   color: white;
-}
-
-.body.homepage {
-  background: #161415 url(./images/homepage-background.jpg) no-repeat center center;
-  height: 100vh;
-}
-
-.body.photography {
-  overflow: visible !important;
-  min-height: 1500px;
-}
-
-.body.resume {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.project-col {
-  display: flex;
-  justify-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.project-image {
-  max-width: 70vw;
-}
-
-.project-item {
-  padding-bottom: 50px;
-}
-
-.homepage-content {
-
-   display: inline-block;
-   vertical-align: middle;
-   margin: 0 auto;
-   width: 85%;
-   padding-top: 150px;
-   padding-bottom: 30px;
-   text-align: center;
-}
-
-.introduction {
-  font-size: 80px;
-}
-
-.intro-description {
-  font-size: 30px;
-}
-
-.navbar-brand.selected {
-  color:  #61819d;
-  /* #5e809c #456b8f #4a6e90 #426582 */
-}
-
-.navbar-brand.selected:hover {
-  color:  #61819d;
-}
-.navbar-brand {
-  padding: 10px;
-}
-
-.navbar-item {
-  font-size: 1.5vw;
-}
-
-b {
-  opacity: 1;
-  transition: opacity .5s;
-}
-
-b:hover {
-  opacity: .6;
-}
-
-.thumbnail-container {
-     display: inline-block;
-     vertical-align: left;
-     margin: 0 auto;
-     width: 85%;
-     padding-top: 150px;
-     padding-bottom: 30px;
-     text-align: center;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-.about-content {
-  display: flex;
-  justify-content: center;
-  padding-top: 5vh;
-  padding-bottom: 10vh;
-  align-items: center;
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.about-body {
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  justify-content: center;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-.about-paragraph {
-  font-size: larger;
-  text-align: left;
+.card {
+  padding: 2em;
 }
 
+.read-the-docs {
+  color: #888;
+}

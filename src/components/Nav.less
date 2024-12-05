@@ -4,26 +4,34 @@
     align-items: center;
     flex-direction: row;
     position: fixed !important;
-    top: 0;
+    left:0;
+    right:0;
+    top:0;    
     z-index: 1;
-    width: 100%;
     color: white;
     font-size: 1.5rem;
     text-shadow: 0 0 5px black;
     background-color: #222;
     gap: 32px;
+    margin-right: 17px;
 }
 
 .tab {
     padding: 8px;
 }
 
-@media screen and (max-width: 688px) {
+@media screen and (max-width: 500px) {
     .nav {
-        font-size: 1.5rem;
+        font-size: 0.7rem;
     }
 
     .tab {
         padding: 12px;
     }
 }
+
+@media screen and (min-width: 501px) and (max-width: 687px) {
+    .nav {
+        font-size: 1.5rem;
+    }
+  }

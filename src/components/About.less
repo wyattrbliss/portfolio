@@ -1,32 +1,26 @@
-.about-content {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 1 1 0;
-    gap: 2rem;
-    flex: 1;
-    flex-wrap: wrap;
-
-    
+img {
+    border-radius: 8px;
 }
 
-.headshot {
-    width: 50%;
+.headshot-wrapper {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    float: left;
+    width: 500px;
 }
 
-.about-text {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    width: 50%;
-    font-size: 1.5rem;
+p {
+    text-align: justify;
+    font-size: 24px;
 }
 
-@media screen and (max-width: 1023px) {
-    .about-content {
-        flex-direction: column;
+@media screen and (max-width: 900px) {
+    .headshot-wrapper {
+        width: 300px;
     }
 
-    .about-text, .headshot {
-        width: 100%;
+    p {
+        font-size: 16px;
     }
 }

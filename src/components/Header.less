@@ -4,25 +4,38 @@
     object-fit: cover;
   }
   
-  .background {
-    transform: translateZ(-20px) scale(5.5);
-  }
-  
-  .foreground {
-    transform: translateZ(-10px) scale(2.2);
-    height: 100%;
-  }
-  
-  .foreground-1 {
-    transform: translateZ(-5px) scale(2);
-  }
+.background {
+	transform: translateZ(-20px) scale(5.5);
+}
 
-  .intro-text {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
+.foreground {
+	transform: translateZ(-10px) scale(2.2);
+	height: 100%;
+}
+
+.foreground-1 {
+	transform: translateZ(-5px) scale(2);
+}
+
+.intro-text {
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem;
+
+	h1 {
+		font-size: 5rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.intro-text {
+		h1 {
+			font-size: 3rem;
+		}
+	}
+
+	.background, .foreground, .foreground-1 {
+		width: 150%;
+	  }
+}
   
-    h1 {
-      font-size: 5rem;
-    }
-  }

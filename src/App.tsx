@@ -13,9 +13,7 @@ export interface SectionData {
 function App() {
 	return (
 		<>
-			<div className='nav-container'>
-				<Nav/>
-			</div>
+			<Nav/>
 			<div className='container'>
 				<header id='home'>
 					<Header />

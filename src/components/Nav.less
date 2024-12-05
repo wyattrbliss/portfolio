@@ -3,19 +3,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    position: fixed;
+    position: fixed !important;
+    top: 0;
     z-index: 1;
     width: 100%;
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-shadow: 0 0 5px black;
+    background-color: #222;
+    gap: 32px;
 }
 
 .tab {
-    padding: 16px;
+    padding: 8px;
+}
 
-    &:hover {
-        color: #333;
-        text-shadow: 0 0 5px white;
+@media screen and (max-width: 688px) {
+    .nav {
+        font-size: 1.5rem;
+    }
+
+    .tab {
+        padding: 12px;
     }
 }

@@ -15,22 +15,44 @@
 
 .foreground-1 {
 	transform: translateZ(-5px) scale(2);
+	animation: float 10s linear infinite;
 }
+
+@keyframes float {
+	0% {
+		transform: translate(0);
+	}
+
+	50% {
+		transform: translateY(-10px)
+	}
+
+	100% {
+	  	transform: translate(0);
+	}
+}
+
 
 .intro-text {
 	display: flex;
 	flex-direction: column;
-	padding: 0 1rem;
+	padding: 0 64px;
+	z-index: 1;
 
 	h1 {
-		font-size: 5rem;
+		font-size: 80px;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.intro-text {
+		padding: 0 16px;
 		h1 {
-			font-size: 3rem;
+			font-size: 48px;
+		}
+
+		h2 {
+			font-size: 16px;
 		}
 	}
 

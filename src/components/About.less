@@ -4,10 +4,9 @@ img {
 
 .headshot-wrapper {
     border-radius: 8px;
-    margin-bottom: 16px;
     margin-right: 16px;
     float: left;
-    width: 500px;
+    width: 450px;
 }
 
 p {
@@ -15,7 +14,18 @@ p {
     font-size: 24px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 400px) {
+    .headshot-wrapper {
+        width: 100%;
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 900px) {
     .headshot-wrapper {
         width: 300px;
     }

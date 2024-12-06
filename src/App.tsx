@@ -19,15 +19,15 @@ function App() {
 					<Header />
 				</header>
 				<section id='about'>
-					<h2>About me</h2>
+					<h1>About me</h1>
 					<About />
 				</section>
 				<section id='resume'>
-					<h2>My resume</h2>
+					<h1>My resume</h1>
 					<Resume />
 				</section>
 				<section id='contact'>
-					<h2>Contact information</h2>
+					<h1>Contact information</h1>
 					<Contact />
 				</section>
 			</div>

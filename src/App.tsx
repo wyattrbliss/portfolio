@@ -4,7 +4,6 @@ import { Resume } from './components/Resume';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Header } from './components/Header';
-import { NbaApp } from './components/NbaApp';
 import { Projects } from './components/Projects';
 
 export interface SectionData {

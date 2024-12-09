@@ -11,7 +11,7 @@ export function Header() {
           	<img src={clouds} alt='Whispy clouds' className='foreground-1'/>
           	<div className='intro-text'>
            		<h1>Hi, I'm Wyatt Bliss</h1>
-            	<h2>I'm a web-developer who loves to travel, meet new people, play video games, and play/watch any kind of sport</h2>
+            	<h2>I'm a web-developer who loves to travel, meet new people, play video games, and play/watch all kinds of sports</h2>
           	</div>
         </>
     )

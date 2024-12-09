@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+    min-width: 1000px;
+}
+
+.standing-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.standing-col, .header-col {
+    min-width: 70px;
+}
+
+.standing-col {
+    border-top: 1px solid white;
+}
+
+.standing-col:first-child, .header-col:first-child {
+    width: 150px;
+    position: sticky;
+    left: 0;
+    background-color: #222;
+}

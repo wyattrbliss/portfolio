@@ -1,7 +1,7 @@
 import './Nav.less';
 
 export function Nav() {
-    const tabs = ['home', 'about', 'resume', 'contact'];
+    const tabs = ['home', 'about', 'resume', 'projects', 'contact'];
 
     const onTabSelect = (tab: string) => {
         const section = document.getElementById(tab);

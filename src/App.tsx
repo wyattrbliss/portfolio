@@ -4,6 +4,8 @@ import { Resume } from './components/Resume';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Header } from './components/Header';
+import { NbaApp } from './components/NbaApp';
+import { Projects } from './components/Projects';
 
 export interface SectionData {
     image: string;
@@ -11,6 +13,7 @@ export interface SectionData {
 }
 
 function App() {
+
 	return (
 		<>
 			<Nav/>
@@ -25,6 +28,10 @@ function App() {
 				<section id='resume'>
 					<h1>My resume</h1>
 					<Resume />
+				</section>
+				<section id='projects'>
+					<h1>My projects</h1>
+					<Projects />
 				</section>
 				<section id='contact'>
 					<h1>Contact information</h1>

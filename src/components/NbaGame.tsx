@@ -48,7 +48,6 @@ interface GameDividerProps {
 }
 
 function GameDivider({time, date, status, live }: GameDividerProps) {
-    const today = new Date();
     return (
         <div>
             {live

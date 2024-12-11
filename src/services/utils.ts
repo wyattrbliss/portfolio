@@ -1,22 +1,7 @@
-import { insertBefore } from "cheerio/lib/api/manipulation";
-
-const URL_PREFIX = 'https://www.balldontlie.io/api/v1/'
-const GAMES_URL = 'games';
-const PLAYERS_URL = 'players';
-const TEAMS_URL = 'teams'
-
-const ODDS_API_KEY = 'ead1ccb29b34e4bcf90a89d1612d417a'
-const ODDS_API_URL = 'https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?apiKey=' + ODDS_API_KEY;
-
-async function fetchAPI(url: string) {
-    const response = await fetch(url);
-    const json = await response.json();
-    console.log(json);
-    return json;
-  }
+import { NBAGame } from "@balldontlie/sdk";
 
 // to determine today's date and format for api fetch
-function getTodaysDate(isMonthFirst: boolean) {
+export function getTodaysDate(isMonthFirst: boolean) {
   // for live games
 
   // helper for formatting
@@ -42,54 +27,50 @@ function getTodaysDate(isMonthFirst: boolean) {
   return date;
 }
 
+// helper function to parse time for upcoming games
+function findTime(game: NBAGame) {
+  let time = game.status.split(' ')[0];
+  let timeSplit = time.split(':');
+  return timeSplit;
+}
 
 // sorts the games based on their time
-function sortByStatus(a, b) {
-  if (a.status.includes('Final')) {
+export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
+  if (firstGame.status.includes('Final')) {
     return -1;
-  } else if (b.status.includes('Final')) {
+  } else if (secondGame.status.includes('Final')) {
     return 1;
   }
 
   // sort by status final -> 4th qtr -> 3rd -> halftime -> 2nd -> -> first -> upcoming time, lower first
-  let checkList = ['Final', '4th', '3rd', 'Halftime', '2nd', '1st']
+  const checkList = ['Final', '4th', '3rd', 'Halftime', '2nd', '1st']
 
   for (let i = 0; i < checkList.length; i++) {
-    let check = checkList[i];
-    if (a.status.includes(check)) {
+    const check = checkList[i];
+    if (firstGame.status.includes(check)) {
       return -1;
-    } else if (b.status.includes(check)) {
+    } else if (secondGame.status.includes(check)) {
       return 1;
     }
   }
+  const firstTime = findTime(firstGame);
+  const secondTime = findTime(secondGame);
+  const hourDiff = Number(firstTime[0]) - Number(secondTime[0]);
 
-  // helper function to parse time for upcoming games
-  function findTime(game) {
-    let time = game.status.split(' ')[0];
-    let timeSplit = time.split(':');
-    return timeSplit;
-  }
-  let timeA = findTime(a);
-  let timeB = findTime(b);
-  let hourDiff = timeA[0] - timeB[0]
-
-  if (hourDiff == 0) {
-      return timeA[1] - timeB[1];
+  if (hourDiff === 0) {
+      return Number(firstTime[1]) - Number(secondTime[1]);
   } else {
       return hourDiff;
   }
 }
 
-// to match the right odds to the game
-function matchOdds(game, odds) {
-  for (let i = 0; i < odds.length; i++) {
-    let odd = odds[i];
-    if (odd.away_team == game.visitor_team.full_name) {
-      // odds.splice(odds.indexOf(odd));
-      return odd;
-    }
-  }
-}
-
-
-export { fetchAPI, getTodaysDate, sortByStatus, matchOdds}
+// // to match the right odds to the game
+// function matchOdds(game, odds) {
+//   for (let i = 0; i < odds.length; i++) {
+//     let odd = odds[i];
+//     if (odd.away_team === game.visitor_team.full_name) {
+//       // odds.splice(odds.indexOf(odd));
+//       return odd;
+//     }
+//   }
+// }

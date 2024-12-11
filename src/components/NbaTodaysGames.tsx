@@ -1,5 +1,5 @@
 import './NbaTodaysGames.less';
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { getTodaysDate, sortByStatus} from '../services/utils';
 import { NbaGame } from "./NbaGame";
 import { BalldontlieAPI, NBAGame } from "@balldontlie/sdk";
@@ -9,7 +9,7 @@ const API_KEY = 'ca342780-942d-46a6-8db5-c65c6752f088';
 export function NbaTodaysGames() {
     const api = new BalldontlieAPI({ apiKey: API_KEY });
     const [games, setGames] = useState<NBAGame[]>([]);
-    const [date, setDate] = useState(getTodaysDate(false));
+    const date = getTodaysDate(false);
 
     // fetch today's games
     async function fetchGames() {

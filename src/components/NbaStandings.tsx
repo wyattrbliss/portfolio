@@ -25,10 +25,10 @@ export function NbaStandings() {
     return (
         <div className='standings-container'>
             <div className='conf-header'>
-                <h2>Current NBA standings</h2>
-                {'-'}
-                <div className='conf-title'>
-                    {conf === 0 ? <h2>WESTERN CONFERENCE</h2> : <h2>EASTERN CONFERENCE</h2>}
+                <div>
+                    {'Current NBA standings'}
+                    {' - '}
+                    {conf === 0 ? 'WESTERN CONFERENCE' : 'EASTERN CONFERENCE'}
                 </div>
                 <button onClick={toggleConf}>Change conference</button>
             </div>

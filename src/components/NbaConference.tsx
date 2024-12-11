@@ -9,6 +9,7 @@ interface NbaConferenceProps {
 export function NbaConference({ conference }: NbaConferenceProps) {
     return (
         <table>
+            <tbody>
             <tr className='standing-row standing-header'>
                 {HEADERS.map((header, i) => {
                     return (
@@ -27,6 +28,7 @@ export function NbaConference({ conference }: NbaConferenceProps) {
                     </tr>
                 )})
             }
+            </tbody>
         </table>
     );
 }

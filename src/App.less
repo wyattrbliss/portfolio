@@ -46,10 +46,16 @@ section {
   background-color: @bg-color;
   color: white;
   text-align: left;
-  padding: 32px 240px;
+  padding: 32px 440px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
+  section {
+    padding: 12px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
   section {
     padding: 32px;
 
@@ -63,8 +69,14 @@ section {
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1280px) {
+@media screen and (min-width: 769px) and (max-width: 1440px) {
   section {
-    padding: 32px 64px;
+    padding: 24px 144px;
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1780px) {
+  section {
+    padding: 32px 320px;
   }
 }

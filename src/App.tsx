@@ -25,7 +25,6 @@ function App() {
 					<About />
 				</section>
 				<section id='resume'>
-					<h1>My resume</h1>
 					<Resume />
 				</section>
 				<section id='projects'>

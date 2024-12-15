@@ -1,4 +1,4 @@
-import './NbaConference.less';
+import './Conference.less';
 
 const HEADERS = ['TEAM', 'W', 'L', 'pct', 'GB', 'PPG', 'OPPG', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'STRK', 'L10', 'W', 'DIV', 'POST']
 
@@ -6,7 +6,7 @@ interface NbaConferenceProps {
     conference: string[][]
 }
 
-export function NbaConference({ conference }: NbaConferenceProps) {
+export function Conference({ conference }: NbaConferenceProps) {
     return (
         <table>
             <tbody>

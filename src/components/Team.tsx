@@ -1,4 +1,4 @@
-import './NbaTeam.less';
+import './Team.less';
 
 interface NbaTeamProps {
     name: string;
@@ -6,7 +6,7 @@ interface NbaTeamProps {
     away: boolean;
 }
 
-export function NbaTeam({ name, fullName, away}: NbaTeamProps) {
+export function Team({ name, fullName, away}: NbaTeamProps) {
 
     return (
         <div className='team-container'>

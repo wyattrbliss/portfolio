@@ -1,7 +1,7 @@
 import { NBAGame } from "@balldontlie/sdk";
 
 // to determine today's date and format for api fetch
-export function getTodaysDate(isMonthFirst: boolean) {
+export function formatDate(date: Date, isMonthFirst: boolean) {
   // for live games
 
   // helper for formatting
@@ -13,18 +13,17 @@ export function getTodaysDate(isMonthFirst: boolean) {
     return numString;
   }
 
-  let today = new Date();
-  let month = today.getMonth() + 1;
-  let day = today.getDate();
-  let date = '';
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  let formattedDate = '';
 
   if (isMonthFirst) {
-    date = month + '/' + day + '/' + today.getFullYear();
+    formattedDate = month + '/' + day + '/' + date.getFullYear();
   } else {
-    date = today.getFullYear() + '-' + addZero(month) + '-' + addZero(day);
+    formattedDate = date.getFullYear() + '-' + addZero(month) + '-' + addZero(day);
   }
 
-  return date;
+  return formattedDate;
 }
 
 // helper function to parse time for upcoming games
@@ -62,6 +61,19 @@ export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
   } else {
       return hourDiff;
   }
+}
+
+export function formatStatus(status: string) {
+  if (status.charAt(status.length - 1) === 'Z') {
+      const date = new Date(status);
+      const hours = date.getHours();
+      const mins = date.getMinutes()
+      const ampm = hours >= 12 ? 'pm' : 'am';
+      const hours12 = hours % 12 || 12;
+      return (`${hours12}:${mins.toString().padStart(2, '0')} ${ampm}`);
+  }
+
+  return status
 }
 
 // // to match the right odds to the game

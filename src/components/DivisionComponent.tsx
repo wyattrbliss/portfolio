@@ -1,23 +1,22 @@
-import './Conference.less';
-
-const HEADERS = ['TEAM', 'W', 'L', 'pct', 'GB', 'PPG', 'OPPG', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'STRK', 'L10', 'W', 'DIV', 'POST']
-
 interface NbaConferenceProps {
-    conference: string[][]
+    name: string;
+    teams: string[][];
+    headers: string[];
 }
 
-export function Conference({ conference }: NbaConferenceProps) {
+export function DivisionComponent({ name, teams, headers, }: NbaConferenceProps) {
     return (
         <table>
             <tbody>
+            <tr>{name}</tr>
             <tr className='standing-row standing-header'>
-                {HEADERS.map((header, i) => {
+                {headers.map((header, i) => {
                     return (
                         <th key={`header-${i}`} className='header-col'>{header}</th>
                     )
                 })}
             </tr>
-            {conference.length > 0 && conference.map((row, i) => {
+            {teams.length > 0 && teams.map((row, i) => {
                 return (
                     <tr className='standing-row' key={i}>
                         {row.map((col, j) => {

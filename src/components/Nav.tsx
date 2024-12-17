@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Nav.less';
 
 export function Nav() {
@@ -10,7 +11,7 @@ export function Nav() {
 
     return (
         <div className='nav'>
-            {tabs.map((tab, i) => <div className='tab' key={`${tab}-${i}`} onClick={() => onTabSelect(tab)}>{tab.toUpperCase()}</div>)}
+            {tabs.map((tab, i) => <Link to={'/'} className='tab' key={`${tab}-${i}`} onClick={() => onTabSelect(tab)}>{tab.toUpperCase()}</Link>)}
         </div>
     )
 }

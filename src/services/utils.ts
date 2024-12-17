@@ -63,6 +63,7 @@ export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
   }
 }
 
+// formats status into upcoming game time
 export function formatStatus(status: string) {
   if (status.charAt(status.length - 1) === 'Z') {
       const date = new Date(status);
@@ -75,14 +76,3 @@ export function formatStatus(status: string) {
 
   return status
 }
-
-// // to match the right odds to the game
-// function matchOdds(game, odds) {
-//   for (let i = 0; i < odds.length; i++) {
-//     let odd = odds[i];
-//     if (odd.away_team === game.visitor_team.full_name) {
-//       // odds.splice(odds.indexOf(odd));
-//       return odd;
-//     }
-//   }
-// }

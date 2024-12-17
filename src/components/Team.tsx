@@ -17,5 +17,5 @@ export function Team({ name, fullName, away}: NbaTeamProps) {
                 </div>
             </a>
         </div>
-    );
+    ); 
 }

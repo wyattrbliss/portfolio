@@ -1,5 +1,4 @@
 import './App.less';
-import { Nav } from './components/Nav';
 import { Resume } from './components/Resume';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
@@ -11,11 +10,10 @@ export interface SectionData {
     title: string;
 }
 
-function App() {
+export function App() {
 
 	return (
 		<>
-			<Nav/>
 			<div className='container'>
 				<header id='home'>
 					<Header />
@@ -39,5 +37,3 @@ function App() {
 		</>
   );
 }
-
-export default App

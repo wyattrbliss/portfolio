@@ -5,6 +5,7 @@ import { scrapeNbaStandings } from '../services/crawler';
 import { useEffect, useState } from 'react';
 
 const HEADERS = ['TEAM', 'W', 'L', 'pct', 'GB', 'PPG', 'OPPG', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'STRK', 'L10', 'W', 'DIV', 'POST'];
+// const DIVISIONS = [['ATLANTIC', 'CENTRAL', 'SOUTHEAST'], ['NORTHWEST', 'PACIFIC', 'SOUTHWEST']];
 
 export function NbaApp() {
     const [conf0, setConf0] = useState<string[][]>([]);
@@ -24,7 +25,7 @@ export function NbaApp() {
         <div className='nba-app'>
             <StandingsComponent 
                 sport={'NBA'} 
-                conferenceNames={['WESTERN CONFERENCE', 'EASTERN CONFERENCE']} 
+                conferenceNames={['EASTERN CONFERENCE', 'WESTERN CONFERENCE']} 
                 conferences={[conf0, conf1]}
                 headers={HEADERS}
                 legend={renderLegend()} />

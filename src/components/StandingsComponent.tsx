@@ -8,6 +8,7 @@ interface StandingsComponentProps {
     conferences: string[][][];
     headers: string[];
     legend: ReactNode;
+    divisions?: string[];
 }
 
 export function StandingsComponent({
@@ -16,6 +17,7 @@ export function StandingsComponent({
     conferences,
     headers,
     legend,
+    divisions,
 }: StandingsComponentProps) {
     const [conf, setConf] = useState(0);
 
@@ -34,7 +36,7 @@ export function StandingsComponent({
                 <button onClick={toggleConf}>Change conference</button>
             </div>
             <div className='conf'>
-                <Conference conference={conf === 0 ? conferences[0] : conferences[1]} headers={headers} />
+                <Conference conference={conf === 0 ? conferences[0] : conferences[1]} headers={headers} divisions={divisions} />
             </div>
             {legend}
         </div>

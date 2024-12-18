@@ -25,15 +25,15 @@ export function Projects() {
             <div className='project'>
                 <Link to={'/nfl'}>
                     <div className='project-title'>
-                        NFL app
+                        NFL app 
                         <a href={ATTRIBUTION_LINK + 'football'}>
                             <img src={footballIcon} width={40} height={40}/>
                         </a>
                     </div>
                 </Link>
                 <div className='project-description'>
-                    I recently started working on expanding to work with other sports. I've started refactoring the NBA app components to support NFL data.
-                    I've currently used the same scraper to pull NFL standings, however I need to make changes to show the teams split by division.
+                    I recently started working on expanding the NBA App to work with other sports. I've started refactoring the NBA app components to support NFL data.
+                    I've currently used the same scraper to pull NFL standings, however I still need to make some changes in order to show today's games.
                 </div>
             </div>
         </div>

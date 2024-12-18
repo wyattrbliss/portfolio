@@ -1,3 +1,5 @@
+import './DivisionComponent.less';
+
 interface NbaConferenceProps {
     name: string;
     teams: string[][];
@@ -5,10 +7,10 @@ interface NbaConferenceProps {
 }
 
 export function DivisionComponent({ name, teams, headers, }: NbaConferenceProps) {
+    headers[0] = name;
     return (
         <table>
             <tbody>
-            <tr>{name}</tr>
             <tr className='standing-row standing-header'>
                 {headers.map((header, i) => {
                     return (

@@ -5,8 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from './components/Layout.tsx';
 import { NbaApp } from './components/NbaApp.tsx';
 import { NflApp } from './components/NflApp.tsx';
-
-
+import { NoPage } from './components/NoPage.tsx';
 
 export default function Main() {
   return (
@@ -16,7 +15,7 @@ export default function Main() {
           <Route index element={<App />} />
           <Route path="NBA" element={<NbaApp />} />
           <Route path="NFL" element={<NflApp />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

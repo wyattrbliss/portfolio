@@ -1,11 +1,32 @@
 import './ConferenceComponent.less';
+import { DivisionComponent } from './DivisionComponent';
 
 interface NbaConferenceProps {
     conference: string[][];
     headers: string[];
+    divisions?: string[];
 }
 
-export function Conference({ conference, headers, }: NbaConferenceProps) {
+export function Conference({ conference, headers, divisions }: NbaConferenceProps) {
+    console.log(conference);
+    if (divisions) {
+        return (
+            <div>
+                {divisions.map((division, i) => {
+                    const leftIndex = i * 4;
+                    const rightIndex = i * 4 + 4;
+                    return (
+                        <DivisionComponent 
+                            key={`division-${i}`}
+                            name={division}
+                            teams={conference.slice(leftIndex, rightIndex)}
+                            headers={headers}/>
+                    )
+                })}
+            </div>
+        );
+    }
+
     return (
         <table>
             <tbody>

@@ -1,4 +1,4 @@
-import { NBAGame } from "@balldontlie/sdk";
+import { NBAGame } from '@balldontlie/sdk';
 
 // to determine today's date and format for api fetch
 export function formatDate(date: Date, isMonthFirst: boolean) {

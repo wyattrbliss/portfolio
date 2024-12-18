@@ -3,7 +3,7 @@ import { StandingsComponent } from './StandingsComponent';
 import { useEffect, useState } from 'react';
 import { scrapeNflStandings } from '../services/crawler';
 
-const HEADERS = ['TEAM', 'W', 'L', 'T', 'PCT', 'PF', 'PA', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'OCONF', 'STRK', 'L10', 'W', 'DIV', 'POST'];
+const HEADERS = ['', 'W', 'L', 'T', 'PCT', 'PF', 'PA', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'OCONF', 'STRK', 'W', 'DIV', 'POST'];
 const DIVISIONS = ['EAST', 'NORTH', 'SOUTH', 'WEST'];
 
 export function NflApp() {
@@ -25,11 +25,13 @@ export function NflApp() {
     return (
         <div className='nfl-app'>
             <StandingsComponent
-                sport={'NFL'} 
+                sport={'NFL'}
                 conferenceNames={['AMERICAN FOOTBALL CONFERENCE', 'NATIONAL FOOTBALL CONFERENCE']}
                 conferences={[conf0, conf1]}
                 headers={HEADERS}
-                legend={renderLegend()} />
+                legend={renderLegend()} 
+                divisions={DIVISIONS}
+                />
         </div>
     )
 }

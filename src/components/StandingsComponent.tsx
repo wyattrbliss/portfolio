@@ -36,7 +36,10 @@ export function StandingsComponent({
                 <button onClick={toggleConf}>Change conference</button>
             </div>
             <div className='conf'>
-                <Conference conference={conf === 0 ? conferences[0] : conferences[1]} headers={headers} divisions={divisions} />
+                <Conference 
+                    conference={conf === 0 ? conferences[0] : conferences[1]}
+                    headers={headers}
+                    divisions={divisions} />
             </div>
             {legend}
         </div>

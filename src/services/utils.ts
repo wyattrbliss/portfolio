@@ -1,4 +1,4 @@
-import { NBAGame } from '@balldontlie/sdk';
+import { Game } from '../types';
 
 // to determine today's date and format for api fetch
 export function formatDate(date: Date, isMonthFirst: boolean) {
@@ -17,6 +17,7 @@ export function formatDate(date: Date, isMonthFirst: boolean) {
   const day = date.getDate();
   let formattedDate = '';
 
+  // format strings
   if (isMonthFirst) {
     formattedDate = month + '/' + day + '/' + date.getFullYear();
   } else {
@@ -27,14 +28,14 @@ export function formatDate(date: Date, isMonthFirst: boolean) {
 }
 
 // helper function to parse time for upcoming games
-function findTime(game: NBAGame) {
-  let time = game.status.split(' ')[0];
+function findTime(status: string) {
+  let time = status.split(' ')[0];
   let timeSplit = time.split(':');
   return timeSplit;
 }
 
 // sorts the games based on their time
-export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
+export function sortByStatus(firstGame: Game, secondGame: Game) {
   if (firstGame.status.includes('Final')) {
     return -1;
   } else if (secondGame.status.includes('Final')) {
@@ -52,8 +53,9 @@ export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
       return 1;
     }
   }
-  const firstTime = findTime(firstGame);
-  const secondTime = findTime(secondGame);
+
+  const firstTime = findTime(firstGame.status);
+  const secondTime = findTime(secondGame.status);
   const hourDiff = Number(firstTime[0]) - Number(secondTime[0]);
 
   if (hourDiff === 0) {
@@ -63,7 +65,7 @@ export function sortByStatus(firstGame: NBAGame, secondGame: NBAGame) {
   }
 }
 
-// formats status into upcoming game time
+// formats status date into time HH:MM AM/PM
 export function formatStatus(status: string) {
   if (status.charAt(status.length - 1) === 'Z') {
       const date = new Date(status);

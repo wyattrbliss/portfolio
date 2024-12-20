@@ -1,6 +1,6 @@
 import './NbaApp.less';
 import { StandingsComponent } from './StandingsComponent';
-import { NbaTodaysGames } from './NbaTodaysGames';
+import { TodaysGames } from './TodaysGames';
 import { scrapeNbaStandings } from '../services/crawler';
 import { useEffect, useState } from 'react';
 
@@ -23,13 +23,13 @@ export function NbaApp() {
 
     return (
         <div className='nba-app'>
+            <TodaysGames sport={'nba'}/>
             <StandingsComponent 
                 sport={'NBA'} 
                 conferenceNames={['EASTERN CONFERENCE', 'WESTERN CONFERENCE']} 
                 conferences={[conf0, conf1]}
                 headers={HEADERS}
                 legend={renderLegend()} />
-            <NbaTodaysGames />
         </div>
     )
 }

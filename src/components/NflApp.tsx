@@ -2,6 +2,7 @@ import './NflApp.less';
 import { StandingsComponent } from './StandingsComponent';
 import { useEffect, useState } from 'react';
 import { scrapeNflStandings } from '../services/crawler';
+import { TodaysGames } from './TodaysGames';
 
 const HEADERS = ['', 'W', 'L', 'T', 'PCT', 'PF', 'PA', 'DIFF', 'HOME', 'ROAD', 'DIV', 'CONF', 'OCONF', 'STRK', 'W', 'DIV', 'POST'];
 const DIVISIONS = ['EAST', 'NORTH', 'SOUTH', 'WEST'];
@@ -23,7 +24,9 @@ export function NflApp() {
     }, []);
     
     return (
-        <div className='nfl-app'>
+        <div className='nfl-app'>            
+            <TodaysGames sport={'nfl'}/>
+
             <StandingsComponent
                 sport={'NFL'}
                 conferenceNames={['AMERICAN FOOTBALL CONFERENCE', 'NATIONAL FOOTBALL CONFERENCE']}

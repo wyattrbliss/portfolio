@@ -1,7 +1,9 @@
-.projects-container {
+.projects-list {
     display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
     flex-direction: row;
-    gap: 32px;
+    gap: 16px;
 }
 
 .project-title {
@@ -12,12 +14,30 @@
     align-items: center;
 }
 
+.project-icon {
+    max-width: 40px;
+}
+
 .project {
-    width: 50%;
+    padding: 8px;
+    background-color: white;
+    color: #404040;
+    border-radius: 8px;
+    border: 2px solid #404040;
+    height: 100%;
+
+    &:hover {
+        background-color: #E4E6EB;
+        border: 2px solid black;
+        color: black;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    transition: background-color 0.4s;
 }
 
 @media screen and (max-width: 480px) {
-    .projects-container {
+    .projects-list {
         flex-direction: column;
     }
 }

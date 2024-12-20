@@ -10,7 +10,15 @@ export function Resume() {
     return (
         <div className='resume-content' onClick={handleClick}>
             <h1 className='resume-header'>My resume</h1>
-            <iframe src={resumeFile} width={'100%'} height={'1000px'}/>
+            <div className='iframe-container'>
+                <iframe 
+                    src={resumeFile}
+                    loading='lazy'
+                    allowFullScreen
+                    width={'100%'}
+                    height={'1000px'}
+                />
+            </div>
         </div>
     );
 }

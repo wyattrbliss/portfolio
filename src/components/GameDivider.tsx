@@ -1,3 +1,4 @@
+import './GameDivider.less'
 import { formatStatus } from '../services/utils';
 
 interface GameDividerProps {
@@ -12,10 +13,10 @@ export function GameDivider({time, status, live }: GameDividerProps) {
             {live ? (
                 <>
                     <div className='game-period'>
-                        {time ? time.split(' ')[1] + ' - ' : ''} 
+                        {time && time.split(' ')[1] ? time.split(' ')[1] + ' - ' : ''} 
                         {status}
                     </div>
-                    {(status !== 'Halftime' && time !== '') &&
+                    {(status !== 'Halftime') &&
                         <div className='live-game-indicator' />
                     }
                 </>

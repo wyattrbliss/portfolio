@@ -76,5 +76,9 @@ export function formatStatus(status: string) {
       return (`${hours12}:${mins.toString().padStart(2, '0')} ${ampm}`);
   }
 
+  if (status.charAt(status.length - 1) === 'T') {
+    return status.split('-')[1];
+  }
+
   return status
 }

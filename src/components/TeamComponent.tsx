@@ -1,4 +1,4 @@
-import './Team.less';
+import './TeamComponent.less';
 
 interface NbaTeamProps {
     name: string;
@@ -6,14 +6,15 @@ interface NbaTeamProps {
     away: boolean;
 }
 
-export function Team({ name, fullName, away}: NbaTeamProps) {
+export function TeamComponent({ name, fullName, away}: NbaTeamProps) {
 
     return (
         <div className='team-container'>
             <a href={`https://www.nba.com/${name}/`}
                target='_blank'>
                 <div className={`team ${away ? 'away' : 'home'}-team`}>
-                    {fullName} 
+                    <div className='team-full-name'>{fullName}</div>
+                    <div className='team-name-abbv'>{name}</div>
                 </div>
             </a>
         </div>

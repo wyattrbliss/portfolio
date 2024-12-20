@@ -8,8 +8,9 @@ interface GameDividerProps {
 }
 
 export function GameDivider({time, status, live }: GameDividerProps) {
+
     return (
-        <div className='game-divider'>
+        <div className={`game-divider ${status.toLocaleLowerCase()}`}>
             {live ? (
                 <>
                     <div className='game-period'>

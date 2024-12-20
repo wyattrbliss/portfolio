@@ -1,5 +1,5 @@
 import './GameComponent.less';
-import { Team } from './Team';
+import { TeamComponent } from './TeamComponent';
 import { GameDivider } from './GameDivider';
 import { Game } from '../types';
 
@@ -9,12 +9,13 @@ interface GameComponentProps {
 
 export function GameComponent({ game }: GameComponentProps) {
     const { status, visitor_team, home_team, visitor_team_score, home_team_score } = game;
-    const live = game.status.charAt(game.status.length - 1) !== 'Z' && game.status !== 'Final';
+    const statusLastChar = game.status.charAt(game.status.length - 1);
+    const live = statusLastChar !== 'Z' && statusLastChar !== 'T' && game.status !== 'Final';
 
     return (
         <div className='game-container'>
             <div className={'game'}>
-                <Team
+                <TeamComponent
                     name={visitor_team.name}
                     fullName={visitor_team.full_name}
                     away={true} />
@@ -32,7 +33,7 @@ export function GameComponent({ game }: GameComponentProps) {
                     {home_team_score}
                 </div>
 
-                <Team
+                <TeamComponent
                     name={home_team.name}
                     fullName={home_team.full_name}
                     away={false} />

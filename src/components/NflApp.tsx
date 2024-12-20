@@ -24,7 +24,8 @@ export function NflApp() {
     }, []);
     
     return (
-        <div className='nfl-app'>            
+        <div className='nfl-app'>  
+            <div className='beta-tag'>NFL api is still in beta - data may not be accurate</div>        
             <TodaysGames sport={'nfl'}/>
 
             <StandingsComponent
